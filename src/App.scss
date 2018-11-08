@@ -1,0 +1,40 @@
+@import './variables';
+
+#knotdiary-main {
+  #knotdiary-main--content {
+    .knotdiary-main--content-body {
+      padding: 1rem;
+      margin: 0 auto;
+      max-width: 1366px;
+    
+      @include media(lg) {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+      }
+
+      > div {
+        min-height: 300px;
+      }
+    }
+
+    .knotdiary-toasts {
+      .knotdiary-toasts--item {
+        &.Toastify__toast--default {
+          background-color: $white;
+        }
+        &.Toastify__toast--info {
+          background-color: $blue;
+        }
+        &.Toastify__toast--warn {
+          background-color: $yellow;
+        }
+        &.Toastify__toast--danger {
+          background-color: $red;
+        }
+        &.Toastify__toast--success {
+          background-color: $green;
+        }
+      }
+    }
+  }
+}

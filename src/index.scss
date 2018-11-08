@@ -1,0 +1,66 @@
+@import './variables';
+
+html, body, .App, #root, {
+  height: 100%;
+  background-color: $gray-100;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+body {
+  font-family: 'Aileron' !important;
+  font-size: $font-size-base !important;
+  color: $primary-text-color !important;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+
+  @include active-element {
+    text-decoration: none !important  ;
+  }
+}
+
+.caps {
+  text-transform: uppercase;
+}
+
+*.has-error {
+  border-bottom: 1.5px solid $danger !important;
+  color: $danger !important;
+
+  &::placeholder {
+    color: $danger !important;
+  }
+}
+
+.error-text {
+  color: $danger;
+  margin-bottom: 0.25rem;
+}
+
+button {
+  &:disabled {
+    background-color: rgba(100, 100, 100, 0.3) !important;
+    border-color: transparent !important;
+  }
+}
+
+*:focus, *:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+::placeholder {
+  color: $white;
+}
