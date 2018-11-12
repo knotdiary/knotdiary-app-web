@@ -1,0 +1,11 @@
+@import '../../variables';
+
+.app-header {
+  background-color: $primary-app-color !important;
+
+  .app-header--menu-toggle {
+    display: block;
+    position: relative;
+    cursor: pointer;
+  }
+}

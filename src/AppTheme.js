@@ -1,28 +1,31 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 
-const Theme = createMuiTheme({
+const AppTheme = createMuiTheme({
+  typography: {
+    useNextVariants: true,
+  },
   overrides: {
     MuiPickersToolbar: {
       toolbar: {
-        backgroundColor: '#003f56',
+        backgroundColor: '#a6daef',
       },
     },
     MuiPickersCalendarHeader: {
     },
     MuiPickersDay: {
       day: {
-        color: '#003f56',
+        color: '#d0e2ec',
       },
       selected: {
-        backgroundColor: '#00aeef',
+        backgroundColor: '#a6daef',
       },
       current: {
-        color: '#003f56',
+        color: '#d0e2ec',
       },
     },
     MuiPickersModal: {
       dialogAction: {
-        color: '#003f56',
+        color: '#d0e2ec',
       },
     },
     MuiPaper: {
@@ -33,11 +36,11 @@ const Theme = createMuiTheme({
   },
   palette: {
     primary: {
-      main: '#00aeef',
+      main: '#a6daef',
       contrastText: '#fff',
     },
     secondary: {
-      main: '#003f56',
+      main: '#d0e2ec',
       contrastText: '#fff',
     },
     type: 'light',
@@ -45,4 +48,4 @@ const Theme = createMuiTheme({
   },
 });
 
-export default Theme;
+export default AppTheme;

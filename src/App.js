@@ -7,8 +7,10 @@ import MuiPickersUtilsProvider from 'material-ui-pickers/utils/MuiPickersUtilsPr
 import MomentUtils from 'material-ui-pickers/utils/moment-utils';
 import { ToastContainer } from 'react-toastify';
 
+import { AppHeader } from 'components';
 import AppRoutes from './AppRoutes';
-import Theme from './AppTheme';
+import AppTheme from './AppTheme';
+import { toggleNavMenu } from 'actions/headerMenu';
 
 import './App.scss';
 
@@ -16,6 +18,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
+  toggleNavMenu: (val) => dispatch(toggleNavMenu(val)),
 });
 
 class App extends PureComponent {
@@ -28,6 +31,7 @@ class App extends PureComponent {
 
   componentDidUpdate = (prevProps) => {
     if (prevProps.location.pathname !== this.props.location.pathname) {
+      this.props.toggleNavMenu(false);
       window.scrollTo(0, 0);
     }
   }
@@ -35,11 +39,14 @@ class App extends PureComponent {
   render() {
     return (
       <CssBaseline>
-        <MuiThemeProvider theme={Theme}>
+        <MuiThemeProvider theme={AppTheme}>
           <MuiPickersUtilsProvider utils={MomentUtils}>
             <div id="knotdiary-main">
               <div id="knotdiary-main--content">
-                <AppRoutes />
+                <AppHeader />
+                <div id="knotdiary-main--content-body">
+                  <AppRoutes />
+                </div>
                 <ToastContainer
                   className="knotdiary-toasts"
                   toastClassName="knotdiary-toasts--item"
