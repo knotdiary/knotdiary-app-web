@@ -7,7 +7,7 @@ import MuiPickersUtilsProvider from 'material-ui-pickers/utils/MuiPickersUtilsPr
 import MomentUtils from 'material-ui-pickers/utils/moment-utils';
 import { ToastContainer } from 'react-toastify';
 
-import { AppHeader } from 'components';
+import { AppHeader, NavMenu } from 'components';
 import AppRoutes from './AppRoutes';
 import AppTheme from './AppTheme';
 import { toggleNavMenu } from 'actions/headerMenu';
@@ -42,6 +42,7 @@ class App extends PureComponent {
         <MuiThemeProvider theme={AppTheme}>
           <MuiPickersUtilsProvider utils={MomentUtils}>
             <div id="knotdiary-main">
+              <NavMenu />
               <div id="knotdiary-main--content">
                 <AppHeader />
                 <div id="knotdiary-main--content-body">

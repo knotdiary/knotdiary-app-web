@@ -3,9 +3,20 @@
 .app-header {
   background-color: $primary-app-color !important;
 
-  .app-header--menu-toggle {
+  &--brand {
+    color: $white !important;
+    flex-grow: 1;
+    font-family: 'bromello' !important;
+    font-size: 1.5rem !important;
+  }
+
+  &--menu-toggle {
     display: block;
     position: relative;
     cursor: pointer;
+  }
+
+  &--notifications {
+
   }
 }

@@ -1,0 +1,55 @@
+@import '../../variables';
+
+.nav-menu {
+  background: $primary-app-color;
+
+  &--links {
+    border-top: 1px solid darken($primary-app-color, 5%);
+    border-bottom: 1px solid darken($primary-app-color, 5%);
+
+    &-head {
+
+    }
+
+    &-item {
+      padding: 1rem;
+      color: $white;
+      display: flex;
+      align-items: center;
+
+      @include active-element {
+        @include leveled-box-shadow(true, 1, $gray-600);
+      }
+      
+      &-icon {
+        display: inline-block;
+        margin-right: 0.5rem;
+        height: 2rem;
+        width: 2rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        &.home {
+          background-image: url('../../assets/icons/icons8-home.png');
+        }
+
+        &.vendors {
+          background-image: url('../../assets/icons/icons8-team.png');
+        }
+
+        &.feed {
+          background-image: url('../../assets/icons/icons8-news-feed.png');
+        }
+
+        &.settings {
+          background-image: url('../../assets/icons/icons8-settings.png');
+        }
+      }
+
+      @include active-element {
+        opacity: 0.7;
+      }
+    }
+  }
+}

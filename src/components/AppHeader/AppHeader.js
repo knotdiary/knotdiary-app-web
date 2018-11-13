@@ -3,11 +3,12 @@ import { connect } from 'react-redux';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import { FiBell, FiMenu } from 'react-icons/fi';
 
 import { toggleNavMenu } from 'actions/headerMenu';
 
 import './AppHeader.scss';
+import { Typography } from '@material-ui/core';
 
 const mapStateToProps = state => ({
   ...state.headerMenu,
@@ -35,7 +36,17 @@ class AppHeader extends PureComponent {
             color="inherit"
             aria-label="Menu"
           >
-            <MenuIcon />
+            <FiMenu />
+          </IconButton>
+          <Typography className="app-header--brand" variant="h6">
+            Knot Diary
+          </Typography>
+          <IconButton
+            className="app-header--notifications"
+            color="inherit"
+            aria-label="Notifications"
+          >
+            <FiBell />
           </IconButton>
         </Toolbar>
       </AppBar>
