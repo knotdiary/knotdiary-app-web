@@ -1,0 +1,5 @@
+{
+  "/api/v1/user": "/tokenUser",
+  "/api/v1/user/:username": "/users/:username",
+  "/api/v1/auth/login": "/login"
+}

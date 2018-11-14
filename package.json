@@ -84,8 +84,15 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
+    "server:prod": "set NODE_ENV=production&&set BABEL_ENV=production&&set NODE_PATH=src&&nodemon src/server/index.js --exec babel-node --presets babel-preset-env",
+    "server:prod:unix": "NODE_ENV=production BABEL_ENV=production NODE_PATH=src nodemon src/server/index.js --exec babel-node --presets babel-preset-env",
+    "server:dev": "set NODE_ENV=development&&set BABEL_ENV=development&&set NODE_PATH=src&&nodemon src/server/index.js --exec babel-node --presets babel-preset-env",
+    "server:dev:unix": "NODE_ENV=development BABEL_ENV=development NODE_PATH=src nodemon src/server/index.js --exec babel-node --presets babel-preset-env",
+    "server:debug": "npm run server:dev --inspect ./bin/www",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "mock:data": "node mock/dbGenerator.js",
+    "mock:api": "npm run mock:data && json-server --watch ./mock/api/db.json --port 8801 --middlewares ./mock/middlewares/postConvert.js --routes ./mock/routes.json",
+    "test": "node scripts/test.js --env=jsdom"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -1,0 +1,63 @@
+@import '../../variables';
+
+.file-uploader {
+  @include active-element {
+    label {
+      cursor: pointer;
+    }
+  }
+
+  .Loader__content {
+    width: 100%;
+    height: 100%;
+  }
+
+  label {
+    color: $blue;
+    font-size: 1.5rem;
+    margin: 0;
+    line-height: 1;
+
+    svg {
+      color: $primary-app-color;
+    }
+  }
+
+  input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .file-uploader--preview {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    .file-uploader--preview-remove {
+      position: absolute;
+      right: 0;
+      top: 0;
+      background-color: $gray-700;
+      padding: 0.125rem;
+      line-height: 1;
+
+      @include active-element {
+
+      }
+
+      svg {
+        color: $white;
+        line-height: 1;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

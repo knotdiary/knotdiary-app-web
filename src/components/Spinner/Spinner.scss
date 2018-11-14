@@ -1,0 +1,15 @@
+@import '../../variables';
+
+.spinner-block {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  .Loader {
+    height: 100%;
+  }
+}
+
+.Loader__message > * {
+  margin: 0 auto;
+}

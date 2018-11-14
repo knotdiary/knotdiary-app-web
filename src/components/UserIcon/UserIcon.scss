@@ -1,0 +1,17 @@
+@import '../../variables';
+
+.user-icon {
+  .user-icon--image {
+    border-top: 3px solid $gray-300;
+    border-right: 3px solid $gray-300;
+    border-bottom: 3px solid $gray-300;
+    border-left: 3px solid $gray-300;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}

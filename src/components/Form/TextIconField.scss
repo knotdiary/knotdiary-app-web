@@ -1,0 +1,12 @@
+@import '../../variables';
+
+.form-text-icon-field {
+  .form-text-icon-field--icon {
+    color: $primary-app-color;
+    width: auto;
+  }
+
+  .form-text-icon-field--error {
+    color: $red;
+  }
+}

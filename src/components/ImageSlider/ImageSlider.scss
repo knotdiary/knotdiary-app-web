@@ -1,0 +1,60 @@
+@import '../../variables';
+
+.image-slider {
+  width: 100%;
+
+  .image-slider--no-images {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    text-align: center;
+    border: 0.25rem solid $white;
+    background: $gray-200;
+    color: $gray-500;
+
+    .image-slider--no-images-icon {
+      font-size: 3rem;
+      color: $gray-500;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  .image-slider--item {
+    min-height: 200px;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+
+    @include media(sm) {
+      height: 250px;
+    }
+
+    @include media(md) {
+      height: 200px;
+    }
+  }
+
+  .slick-arrow {
+    &::before {
+      color: $gray-600;
+    }
+  }
+
+  .slick-dots {
+    bottom: 1rem;
+
+    li {
+      button {
+        &:before {
+          color: $white;
+        }
+      }
+    }
+  }
+}
