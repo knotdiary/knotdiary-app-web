@@ -5,11 +5,9 @@ import uuid from 'uuid';
 import { getAvatarImage } from 'lib/userUtils';
 import './UserIcon.scss';
 
-const getBackgroundImageStyle = (user, width, height) => {
+const getBackgroundImageStyle = (user) => {
   return {
     backgroundImage: `url(${getAvatarImage(user)}`,
-    width: `${width}px`,
-    height: `${height}px`,
   };
 }
 

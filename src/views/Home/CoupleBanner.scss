@@ -1,0 +1,65 @@
+@import '../../variables';
+
+.couple-banner {
+  &--cover-photo {
+    padding: 1rem 0;
+
+    @include media(sm) {
+      padding: 3rem 0;
+    }
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    justify-content: center;
+  }
+
+  &--users {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem 0;
+
+    @include media(sm) {
+      padding: 3rem 0;
+    }
+
+  }
+
+  &--user {
+    width: 6rem;
+    height: 6rem;
+
+    > div {
+      width: 100%;
+      height: 100%;
+    }
+
+    &.groom {
+      margin-right: 1rem;
+    }
+  
+    &.bride {
+      margin-left: 1rem;
+    }
+  }
+
+
+  &--date {
+    @mixin font {
+      font-family: 'bromello';
+      color: $white;
+      text-align: center;
+    }
+
+    h2 {
+      @include font;
+    }
+
+    h4 {
+      @include font;
+    }
+  }
+}
