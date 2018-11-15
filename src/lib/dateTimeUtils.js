@@ -8,6 +8,14 @@ export const getFromTime = (dateTime) => {
   return moment(dateTime).fromNow();
 }
 
+export const getDateDiffByDays = (startDate, endDate) => {
+  const localStart = moment(startDate).local();
+  const localEnd = moment(endDate).local();
+  const diff = localStart.diff(localEnd, 'days');
+
+  return diff;
+}
+
 export const getSaleDisplayTime = (startDate, endDate) => {
   const localStart = moment(startDate).local();
   const localEnd = moment(endDate).local();

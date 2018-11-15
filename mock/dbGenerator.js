@@ -25,15 +25,17 @@ jsf.format('futureDate', function() { return faker.date.future().toISOString(); 
 var userSchema = require('./schema/userSchema');
 var users = jsf(userSchema);
 var loginSchema = require('./schema/loginSchema');
-var login = jsf(loginSchema);;
+var login = jsf(loginSchema);
 var tokenUserSchema = require('./schema/tokenUserSchema');
-var tokenUser = jsf(tokenUserSchema);;
+var tokenUser = jsf(tokenUserSchema);
+var coupleSchema = require('./schema/coupleSchema');
+var couple = jsf(coupleSchema);;
 
 var json = JSON.stringify({
   users,
-  posts,
   login,
   tokenUser,
+  couple,
 });
 
 fs.writeFile('./mock/api/db.json', json, function(err) {

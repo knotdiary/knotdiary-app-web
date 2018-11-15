@@ -28,6 +28,7 @@
     "eslint-plugin-import": "2.14.0",
     "eslint-plugin-jsx-a11y": "6.1.2",
     "eslint-plugin-react": "7.11.1",
+    "express": "^4.16.4",
     "file-loader": "2.0.0",
     "fs-extra": "7.0.0",
     "html-webpack-plugin": "4.0.0-alpha.2",
@@ -39,6 +40,7 @@
     "material-ui-pickers": "^1.0.0-rc.17",
     "mini-css-extract-plugin": "0.4.3",
     "moment": "^2.22.2",
+    "morgan": "^1.9.1",
     "optimize-css-assets-webpack-plugin": "5.0.1",
     "pnp-webpack-plugin": "1.1.0",
     "postcss-flexbugs-fixes": "4.1.0",
@@ -70,16 +72,21 @@
     "react-toastify": "^4.4.0",
     "react-transition-group": "^2.5.0",
     "reactjs-localstorage": "0.0.7",
+    "redis": "^2.8.0",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
     "resolve": "1.8.1",
     "sass-loader": "7.1.0",
+    "socket.io": "^2.1.1",
+    "socket.io-client": "^2.1.1",
     "style-loader": "0.23.0",
     "terser-webpack-plugin": "1.1.0",
     "url-loader": "1.1.1",
+    "uuid": "^3.3.2",
     "webpack": "4.19.1",
     "webpack-dev-server": "3.1.9",
     "webpack-manifest-plugin": "2.0.4",
+    "winston": "^3.1.0",
     "workbox-webpack-plugin": "3.6.2"
   },
   "scripts": {
@@ -91,7 +98,7 @@
     "server:debug": "npm run server:dev --inspect ./bin/www",
     "build": "node scripts/build.js",
     "mock:data": "node mock/dbGenerator.js",
-    "mock:api": "npm run mock:data && json-server --watch ./mock/api/db.json --port 8801 --middlewares ./mock/middlewares/postConvert.js --routes ./mock/routes.json",
+    "mock:api": "npm run mock:data && json-server --watch ./mock/api/db.json --port 8801 --routes ./mock/routes.json",
     "test": "node scripts/test.js --env=jsdom"
   },
   "eslintConfig": {
@@ -108,7 +115,7 @@
     "json-schema-faker": "^0.5.0-rc16",
     "json-server": "^0.14.0",
     "node-sass": "^4.9.4",
-    "nodemon": "^1.18.4",
+    "nodemon": "^1.18.6",
     "sass-loader": "^7.1.0"
   },
   "jest": {

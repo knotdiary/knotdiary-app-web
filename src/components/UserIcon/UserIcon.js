@@ -29,6 +29,7 @@ UserIcon.propTypes = {
     username: PropTypes.string.isRequired,
     firstName: PropTypes.string,
     lastName: PropTypes.string,
+    avatarUrl: PropTypes.string,
   }).isRequired,
   width: PropTypes.number,
   height: PropTypes.number,
