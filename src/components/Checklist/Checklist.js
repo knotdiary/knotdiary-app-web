@@ -22,11 +22,11 @@ const CheckList = (props) => {
           return (
             <div className="check-list--item" key={key}>
               <div className="check-list--item-icon">
-                <img src={getVendorIcon(vendor.avatarUrl)} alt={item.description} />
+                <div style={getVendorIcon(vendor.avatarUrl)} alt={item.description} />
               </div>
               <div className="check-list--item-details">
                 <Typography variant="h6">{item.description}</Typography>
-                <Typography variant="display4">{`${getDisplayTime(item.appointmentDate)} for your appointment`}</Typography>
+                <Typography variant="caption">{`${getDisplayTime(item.appointmentDate)} of your appointment`}</Typography>
               </div>
             </div>
           );

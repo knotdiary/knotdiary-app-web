@@ -7,11 +7,20 @@
     flex-direction: row;
 
     &-icon {
-      img {
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
+      display: flex;
+      flex-direction: column;
       justify-content: center;
+      margin-right: 1rem;
+
+      > div {
+        width: 2rem;
+        height: 2rem;
+        border: 2px solid $gray-400;
+        border-radius: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        justify-content: center;
       }
     }
 

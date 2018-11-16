@@ -39,7 +39,9 @@ var checklist = {
       maximum: 20,
     },
     vendor: vendor,
-    isDone: false,
+    isDone: {
+      type: 'boolean',
+    },
   },
 };
 
