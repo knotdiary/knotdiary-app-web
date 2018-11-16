@@ -5,12 +5,17 @@ import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { createBrowserHistory }  from 'history';
 import { ConnectedRouter , connectRouter, routerMiddleware } from 'connected-react-router';
+import WOW from 'wowjs';
 import { unregister } from './serviceWorker';
 
 import App from './App';
 import * as reducers from './reducers/index';
 
 import './index.scss';
+
+new WOW.WOW({
+  live: false
+}).init();
 
 const history = createBrowserHistory();
 

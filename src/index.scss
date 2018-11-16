@@ -1,5 +1,7 @@
 @import './variables';
 @import './assets/font.scss';
+@import '../node_modules/hover.css/scss/hover.scss';
+@import '../node_modules/animate.css/animate.css';
 
 html, body, .App, #root, {
   height: 100%;

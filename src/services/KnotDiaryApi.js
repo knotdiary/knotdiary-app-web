@@ -18,6 +18,11 @@ class KnotDiaryApi extends ApiClient {
     const url = 'api/v1/couple';
     return this.get(url);
   }
+
+  async getHomeChecklist(coupleId) {
+    const url = `api/v1/couple/${coupleId}/checklist`;
+    return this.get(url);
+  }
 }
 
 export default new KnotDiaryApi();

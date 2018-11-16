@@ -2,5 +2,6 @@
   "/api/v1/user": "/tokenUser",
   "/api/v1/user/:username": "/users/:username",
   "/api/v1/auth/login": "/login",
-  "/api/v1/couple\\?*": "/couple"
+  "/api/v1/couple\\?*": "/couple",
+  "/api/v1/couple/:coupleId/checklist": "/checkList"
 }

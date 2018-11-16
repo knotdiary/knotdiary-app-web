@@ -16,14 +16,13 @@ export const getDateDiffByDays = (startDate, endDate) => {
   return diff;
 }
 
-export const getSaleDisplayTime = (startDate, endDate) => {
+export const getDisplayTime = (startDate, endDate) => {
   const localStart = moment(startDate).local();
   const localEnd = moment(endDate).local();
   const startDiff = moment().diff(localStart, 'minutes');
   const endDiff = moment().diff(localEnd, 'minutes');
 
   if (startDiff >= 0) {
-    // sale is ongoing so we display remaining time left
     const endDiffAbs = Math.abs(endDiff);
 
     if (endDiffAbs < 60) {

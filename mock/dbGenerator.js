@@ -29,13 +29,16 @@ var login = jsf(loginSchema);
 var tokenUserSchema = require('./schema/tokenUserSchema');
 var tokenUser = jsf(tokenUserSchema);
 var coupleSchema = require('./schema/coupleSchema');
-var couple = jsf(coupleSchema);;
+var couple = jsf(coupleSchema);
+var checkListSchema = require('./schema/checkListSchema');
+var checkList = jsf(checkListSchema);
 
 var json = JSON.stringify({
   users,
   login,
   tokenUser,
   couple,
+  checkList,
 });
 
 fs.writeFile('./mock/api/db.json', json, function(err) {

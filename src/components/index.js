@@ -7,3 +7,4 @@ export { default as PasswordField } from './Form/PasswordField';
 export { default as TextIconField } from './Form/TextIconField';
 export { default as UserIcon } from './UserIcon/UserIcon';
 export { default as MetaTags } from './MetaTags/MetaTags';
+export { default as Checklist } from './Checklist/Checklist';
