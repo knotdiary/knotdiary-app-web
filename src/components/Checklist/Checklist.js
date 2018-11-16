@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Typography from '@material-ui/core/Typography';
+import { Link } from 'react-router-dom';
 
 import { getDisplayTime } from 'lib/dateTimeUtils';
 
@@ -15,28 +15,43 @@ const getVendorIcon = (icon) => {
 const CheckList = (props) => {
   return (
     <div className="check-list">
+      <h3 className="check-list--header">{props.title}</h3>
       {
         props.items.map((item, key) => {
           const { vendor } = item;
 
+          if (key > props.maxDisplay - 1) {
+            return null;
+          }
+
           return (
             <div className="check-list--item" key={key}>
               <div className="check-list--item-icon">
-                <img src={getVendorIcon(vendor.avatarUrl)} alt={item.description} />
+                <div style={getVendorIcon(vendor.avatarUrl)} alt={item.description} />
               </div>
               <div className="check-list--item-details">
-                <Typography variant="h6">{item.description}</Typography>
-                <Typography variant="display4">{`${getDisplayTime(item.appointmentDate)} for your appointment`}</Typography>
+                <h4 variant="body1">{item.description}</h4>
+                <p variant="body2">{`${getDisplayTime(item.appointmentDate)} of your appointment`}</p>
               </div>
             </div>
           );
         })
-    }
+      }
+      {
+        props.items.length > (props.maxDisplay - 1) && (
+          <Link className="check-list--show-more" to="/check-list">
+            Show more...
+          </Link>
+        )
+      }
+
     </div>
   )
 }
 
 CheckList.propTypes = {
+  title: PropTypes.string,
+  maxDisplay: PropTypes.number,
   items: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
@@ -49,6 +64,11 @@ CheckList.propTypes = {
       avatarUrl: PropTypes.string,
     }),
   })).isRequired,
+};
+
+CheckList.defaultProps = {
+  title: 'Checklist',
+  maxDisplay: 5,
 };
 
 export default CheckList;

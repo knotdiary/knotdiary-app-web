@@ -101,7 +101,7 @@
     "server:debug": "npm run server:dev --inspect ./bin/www",
     "build": "node scripts/build.js",
     "mock:data": "node mock/dbGenerator.js",
-    "mock:api": "npm run mock:data && json-server --watch ./mock/api/db.json --port 8801 --routes ./mock/routes.json",
+    "mock:api": "npm run mock:data && json-server --watch ./mock/api/db.json --port 8801  --middlewares ./mock/middlewares/postPutConvert.js --routes ./mock/routes.json",
     "test": "node scripts/test.js --env=jsdom"
   },
   "eslintConfig": {

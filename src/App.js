@@ -11,14 +11,19 @@ import { AppHeader, NavMenu } from 'components';
 import AppRoutes from './AppRoutes';
 import AppTheme from './AppTheme';
 import { toggleNavMenu } from 'actions/headerMenu';
+import { getUser } from 'actions/user';
+import pageNames from 'lib/pageNames';
 
 import './App.scss';
 
 const mapStateToProps = state => ({
+  ...state.navigation,
+  ...state.user,
 });
 
 const mapDispatchToProps = dispatch => ({
   toggleNavMenu: (val) => dispatch(toggleNavMenu(val)),
+  getUser: () => dispatch(getUser()),
 });
 
 class App extends PureComponent {
@@ -27,6 +32,8 @@ class App extends PureComponent {
     if (jssStyles && jssStyles.parentNode) {
       jssStyles.parentNode.removeChild(jssStyles);
     }
+
+    this.props.getUser();
   }
 
   componentDidUpdate = (prevProps) => {
@@ -37,6 +44,8 @@ class App extends PureComponent {
   }
 
   render() {
+    const { currentPage } = this.props;
+
     return (
       <CssBaseline>
         <MuiThemeProvider theme={AppTheme}>
@@ -44,7 +53,9 @@ class App extends PureComponent {
             <div id="knotdiary-main">
               <NavMenu />
               <div id="knotdiary-main--content">
-                <AppHeader />
+                {
+                  currentPage !== pageNames.login ? <AppHeader /> : null
+                }
                 <div id="knotdiary-main--content-body">
                   <AppRoutes />
                 </div>
