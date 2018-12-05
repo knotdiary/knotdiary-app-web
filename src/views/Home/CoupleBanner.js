@@ -15,7 +15,7 @@ const getCoverPhotoStyle = (coverPhotoUrl) => {
 
 const CoupleBanner = (props) => {
   return (
-    <div className="couple-banner">
+    <div className={`couple-banner ${props.className}`}>
       <div className="couple-banner--cover-photo" style={getCoverPhotoStyle(props.coverPhotoUrl)}>
         <div className="couple-banner--users">
           <UserIcon className="couple-banner--user groom wow slideInLeft" user={props.groom} />

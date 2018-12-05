@@ -1,0 +1,11 @@
+@import '../../variables';
+
+.home-view {
+  &--banner {
+    margin-bottom: 1rem;
+  }
+
+  &--content {
+    padding: 0 1rem 1rem;
+  }
+}

@@ -1,28 +1,49 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
+import Paper from '@material-ui/core/Paper';
 
-import { getCoupleInfo, getHomeChecklist, setIsInitialized } from 'actions/home';
 import CoupleBanner from './CoupleBanner';
 import { Checklist } from 'components';
+import { setIsHomeInitialized } from 'actions/home';
+import { setCurrentPage } from 'actions/navigation';
+import { getCoupleInfo } from 'actions/couple';
+import { getCoupleChecklist } from 'actions/checklist';
+import pageNames from 'lib/pageNames';
+
+import './HomeView.scss';
+
+const mapStateToProps = (state) => ({
+  ...state.home,
+  ...state.checklist,
+  ...state.couple,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  getCoupleInfo: (username) => dispatch(getCoupleInfo(username)),
+  getCoupleChecklist: (coupleId) => dispatch(getCoupleChecklist(coupleId)),
+  setIsInitialized: (val) => dispatch(setIsHomeInitialized(val)),
+  setCurrentPage: () => dispatch(setCurrentPage(pageNames.home)),
+});
 
 export class HomeView extends PureComponent {
   componentDidMount = () => {
     this.props.getCoupleInfo();
+    this.props.setCurrentPage();
   }
 
   componentDidUpdate = (prevProps) => {
-    const { coupleInfo, getHomeChecklist, setIsInitialized, isInitialized } = this.props;
+    const { coupleInfo, getCoupleChecklist, setIsInitialized, isInitialized } = this.props;
 
     if (coupleInfo && coupleInfo.id && !isInitialized) {
-      getHomeChecklist(coupleInfo.id);
+      getCoupleChecklist(coupleInfo.id);
       setIsInitialized(true);
     }
   }
 
   componentWillUnmount = () => {
-    this.props.isInitialized(false);
+    this.props.setIsInitialized(false);
   }
-  
+
   render() {
     const { coupleInfo, checklist } = this.props;
     if (!coupleInfo) {
@@ -32,27 +53,22 @@ export class HomeView extends PureComponent {
     const { groom, bride, coverPhotoUrl, weddingDate } = coupleInfo;
 
     return (
-      <div>
+      <div className="home-view">
         <CoupleBanner
+          className="home-view--banner"
           groom={groom}
           bride={bride}
           coverPhotoUrl={coverPhotoUrl}
           weddingDate={weddingDate}
         />
-        <Checklist items={checklist} />
+        <div className="home-view--content">
+          <Paper elevation={1}>
+            <Checklist items={checklist} />
+          </Paper>
+        </div>
       </div>
     )
   }
 }
-
-const mapStateToProps = (state) => ({
-  ...state.home,
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  getCoupleInfo: () => dispatch(getCoupleInfo()),
-  getHomeChecklist: (coupleId) => dispatch(getHomeChecklist(coupleId)),
-  setIsInitialized: (val) => dispatch(setIsInitialized(val)),
-});
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeView)
