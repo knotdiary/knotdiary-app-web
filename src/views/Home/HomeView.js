@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 
 import CoupleBanner from './CoupleBanner';
 import { Checklist } from 'components';
@@ -62,9 +63,13 @@ export class HomeView extends PureComponent {
           weddingDate={weddingDate}
         />
         <div className="home-view--content">
-          <Paper elevation={1}>
-            <Checklist items={checklist} />
-          </Paper>
+          <Grid container spacing={16}>
+            <Grid item xs={12} md={6} lg={4}>
+              <Paper elevation={1}>
+                <Checklist items={checklist} />
+              </Paper>
+            </Grid>
+          </Grid>
         </div>
       </div>
     )

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Drawer from 'react-motion-drawer';
 
 import { toggleNavMenu } from 'actions/headerMenu';
+import { logout } from 'actions/login';
 
 import './NavMenu.scss';
 
@@ -13,6 +14,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   toggleNavMenu: (val) => dispatch(toggleNavMenu(val)),
+  logout: () => dispatch(logout()),
 });
 
 class NavMenu extends PureComponent {
@@ -21,8 +23,12 @@ class NavMenu extends PureComponent {
     toggleNavMenu(newState);
   }
 
+  logout = () => {
+    this.props.logout();
+  }
+
   render() {
-    const { isNavMenuOpen } = this.props;
+    const { isNavMenuOpen, logout } = this.props;
 
     return (
       <Drawer
@@ -48,6 +54,9 @@ class NavMenu extends PureComponent {
             <span className="nav-menu--links-item-icon settings"></span>
             <span>Settings</span>
           </Link>
+          <div className="nav-menu--links-item" role="menuitem" onClick={logout}>
+            <span>Logout</span>
+          </div>
         </div>
       </Drawer>
     )
