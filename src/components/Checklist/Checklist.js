@@ -30,8 +30,8 @@ const CheckList = (props) => {
                 <div style={getVendorIcon(vendor.avatarUrl)} alt={item.description} />
               </div>
               <div className="check-list--item-details">
-                <h4 variant="body1">{item.description}</h4>
-                <p variant="body2">{`${getDisplayTime(item.appointmentDate)} of your appointment`}</p>
+                <Typography variant="h6">{item.description}</Typography>
+                <Typography variant="caption">{`${getDisplayTime(item.appointmentDate)} of your appointment`}</Typography>
               </div>
             </div>
           );
