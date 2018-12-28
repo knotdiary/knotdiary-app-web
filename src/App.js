@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import MuiPickersUtilsProvider from 'material-ui-pickers/utils/MuiPickersUtilsProvider';
+import { MuiPickersUtilsProvider } from 'material-ui-pickers';
 import MomentUtils from 'material-ui-pickers/utils/moment-utils';
 import { ToastContainer } from 'react-toastify';
 

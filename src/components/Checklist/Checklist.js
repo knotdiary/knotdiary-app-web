@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { Typography } from '@material-ui/core';
 
 import { getDisplayTime } from 'lib/dateTimeUtils';
 
