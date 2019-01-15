@@ -1,5 +1,5 @@
 import { reactLocalStorage } from 'reactjs-localstorage';
-import gabbooApi from 'services/GabbooApi';
+import knotDiaryApi from 'services/KnotDiaryApi';
 
 export const SET_USER = 'SET_USER';
 export const SET_SESSION = 'SET_SESSION';
@@ -11,7 +11,7 @@ const getUser = () => {
 
     const tokenObject = reactLocalStorage.getObject('auth-token');
     if (tokenObject && tokenObject.access_token) {
-      const user = await gabbooApi.getUser();
+      const user = await knotDiaryApi.getUser();
 
       if (user && user.data) {
         reactLocalStorage.setObject('user', user.data);

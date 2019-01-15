@@ -39,15 +39,19 @@ class NavMenu extends PureComponent {
       >
         <div className="nav-menu--links">
           <Link className="nav-menu--links-item" to="/">
+            <span className="nav-menu--links-item-icon home"></span>
             <span>Home</span>
           </Link>
           <Link className="nav-menu--links-item" to="/feed">
+            <span className="nav-menu--links-item-icon feed"></span>
             <span>Newsfeed</span>
           </Link>
           <Link className="nav-menu--links-item" to="/vendors">
+            <span className="nav-menu--links-item-icon vendors"></span>
             <span>Vendors</span>
           </Link>
           <Link className="nav-menu--links-item" to="/settings">
+            <span className="nav-menu--links-item-icon settings"></span>
             <span>Settings</span>
           </Link>
           <div className="nav-menu--links-item" role="menuitem" onClick={logout}>

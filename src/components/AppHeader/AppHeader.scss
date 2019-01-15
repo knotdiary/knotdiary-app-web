@@ -1,13 +1,13 @@
 @import '../../variables';
 
 .app-header {
-  background-color: $primary-color !important;
+  background-color: $primary-app-color !important;
 
   &--brand {
     color: $white !important;
     flex-grow: 1;
+    font-family: 'bromello' !important;
     font-size: 1.5rem !important;
-    text-align: center;
 
     img {
       width: 3rem;

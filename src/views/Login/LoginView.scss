@@ -9,6 +9,11 @@
   background-color: $white;
   margin: -1rem;
 
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
   &--form {
     margin: 0 auto;
     text-align: center;
@@ -42,13 +47,11 @@
       padding-top: 1rem;
       padding-bottom: 2rem;
       justify-content: center;
-
-      &-signup {
-        color: $primary-color;
-      }
-
-      &-login {
-        color: $white;
+  
+      button {
+        &:first-of-type {
+          margin-right: 0.5rem;
+        }
       }
     }
   }

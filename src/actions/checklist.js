@@ -1,10 +1,10 @@
-import gabbooApi from 'services/GabbooApi';
+import knotDiaryApi from 'services/KnotDiaryApi';
 
 export const SET_COUPLE_CHECKLIST = 'SET_COUPLE_CHECKLIST';
 
 const getCoupleChecklist = (coupleId) => {
   return async (dispatch) => {
-    const results = await gabbooApi.getCoupleChecklist(coupleId);
+    const results = await knotDiaryApi.getCoupleChecklist(coupleId);
     if (results) {
       dispatch({ type: SET_COUPLE_CHECKLIST, payload: results });
     }

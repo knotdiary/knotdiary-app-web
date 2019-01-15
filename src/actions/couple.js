@@ -1,10 +1,10 @@
-import gabbooApi from 'services/GabbooApi';
+import knotDiaryApi from 'services/KnotDiaryApi';
 
 export const SET_COUPLE_INFO = 'SET_COUPLE_INFO';
 
 const getCoupleInfo = (username) => {
   return async (dispatch) => {
-    const result = await gabbooApi.getCoupleInfo(username);
+    const result = await knotDiaryApi.getCoupleInfo(username);
     if (result.isSuccess) {
       dispatch({ type: SET_COUPLE_INFO, payload: result.data });
     }

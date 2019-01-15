@@ -9,6 +9,7 @@ import { FiBell, FiMenu } from 'react-icons/fi';
 import { toggleNavMenu } from 'actions/headerMenu';
 
 import './AppHeader.scss';
+import knotIcon from 'assets/knot-icon.png';
 
 const mapStateToProps = state => ({
   ...state.headerMenu,
@@ -39,7 +40,8 @@ class AppHeader extends PureComponent {
             <FiMenu />
           </IconButton>
           <Typography className="app-header--brand" variant="h6">
-            Gabboo
+            <img src={knotIcon} alt="Knot Diary" />
+            Knot Diary
           </Typography>
           <IconButton
             className="app-header--notifications hvr-buzz-out"
@@ -56,4 +58,3 @@ class AppHeader extends PureComponent {
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppHeader);
 export { AppHeader as PlainAppHeader };
-

@@ -1,6 +1,6 @@
 import { reactLocalStorage } from 'reactjs-localstorage';
 import { SET_USER } from './user';
-import gabbooApi from 'services/GabbooApi';
+import knotDiaryApi from 'services/KnotDiaryApi';
 
 export const UPDATE_USER_SUCCESS = 'UPDATE_USER_SUCCESS';
 export const UPDATE_USER_BUSY = 'UPDATE_USER_BUSY';
@@ -17,7 +17,7 @@ const updateUser = (email, firstName, lastName, mobile, description) => {
     dispatch({ type: UPDATE_USER_BUSY, payload: true });
 
     try {
-      const result = await gabbooApi.updateUser({
+      const result = await knotDiaryApi.updateUser({
         firstName,
         lastName,
         mobile,
@@ -46,7 +46,7 @@ const updatePassword = (username, oldPassword, newPassword) => {
     dispatch({ type: UPDATE_PASSWORD_BUSY, payload: true });
 
     try {
-      const result = await gabbooApi.updatePassword(username, oldPassword, newPassword);
+      const result = await knotDiaryApi.updatePassword(username, oldPassword, newPassword);
 
       if (result && result.data) {
         reactLocalStorage.setObject('user', result.data);
@@ -66,7 +66,7 @@ const updatePassword = (username, oldPassword, newPassword) => {
 
 const updateUserAvatar = (username, file) => {
   return async (dispatch) => {
-    const user = await gabbooApi.updateUserAvatar(username, file);
+    const user = await knotDiaryApi.updateUserAvatar(username, file);
 
     if (user && user.data) {
       reactLocalStorage.setObject('user', user.data);
@@ -77,7 +77,7 @@ const updateUserAvatar = (username, file) => {
 
 const updateUserBackground = (username, file) => {
   return async (dispatch) => {
-    const user = await gabbooApi.updateUserBackground(username, file);
+    const user = await knotDiaryApi.updateUserBackground(username, file);
 
     if (user && user.data) {
       reactLocalStorage.setObject('user', user.data);
