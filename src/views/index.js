@@ -6,7 +6,6 @@ export { default as NotFoundView } from './Misc/NotFoundView';
 export { default as SplashView } from './Misc/SplashView';
 export { default as ErrorView } from './Misc/ErrorView';
 export { default as SignupView } from './Signup/SignupView';
-export { default as PartnerInviteView } from './Signup/PartnerInviteView';
 export { default as VendorDetailView } from './Vendor/VendorDetailView';
 export { default as VendorListView } from './Vendor/VendorListView';
 export { default as FeedView } from './Feed/FeedView';

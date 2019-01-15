@@ -11,7 +11,6 @@ import pageNames from 'lib/pageNames';
 import { login } from 'actions/login';
 import { setCurrentPage } from 'actions/navigation';
 import './LoginView.scss';
-import logo from 'assets/knot-diary-splash-bg.png';
 
 const mapStateToProps = state => ({
   ...state.login,
@@ -80,7 +79,6 @@ class LoginView extends PureComponent {
         <form className="login-view--form" onSubmit={this.login}>
           <Spinner isLoading={isLoginBusy}>
             <Fragment>
-              <img src={logo} alt="Knot Diary" />
               <div className="login-view--form-input">
                 <TextField
                   type="text"
@@ -109,10 +107,10 @@ class LoginView extends PureComponent {
                 </p>
               }
               <div className="login-view--form-action">
-                <Link to="/signup">
+                <Link className="login-view--form-action-signup" to="/signup">
                   <Button>Sign-up</Button>
                 </Link>
-                <Button type="submit" variant="contained" onClick={this.login} color="primary">Login</Button>
+                <Button className="login-view--form-action-login" type="submit" variant="contained" onClick={this.login} color="primary">Login</Button>
               </div>
               {
                 user && user.id && <Redirect to={this.getReturnUrl()} />

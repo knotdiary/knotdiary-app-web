@@ -9,7 +9,7 @@ if (typeof(window) !== 'undefined') {
   baseApiUrl = process.env.NODE_ENV === 'production' ? prod.apiUrl : local.apiUrl;
 }
 
-class KnotDiaryApi extends ApiClient {
+class GabbooApi extends ApiClient {
   constructor() {
     super(baseApiUrl);
   }
@@ -74,4 +74,4 @@ class KnotDiaryApi extends ApiClient {
   }
 }
 
-export default new KnotDiaryApi();
+export default new GabbooApi();

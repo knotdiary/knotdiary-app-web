@@ -50,18 +50,18 @@ class App extends PureComponent {
       <CssBaseline>
         <MuiThemeProvider theme={AppTheme}>
           <MuiPickersUtilsProvider utils={MomentUtils}>
-            <div id="knotdiary-main">
+            <div id="gabboo-main">
               <NavMenu />
-              <div id="knotdiary-main--content">
+              <div id="gabboo-main--content">
                 {
                   currentPage !== pageNames.login ? <AppHeader /> : null
                 }
-                <div id="knotdiary-main--content-body">
+                <div id="gabboo-main--content-body">
                   <AppRoutes />
                 </div>
                 <ToastContainer
-                  className="knotdiary-toasts"
-                  toastClassName="knotdiary-toasts--item"
+                  className="gabboo-toasts"
+                  toastClassName="gabboo-toasts--item"
                   draggablePercent={50}
                   position="top-right"
                   hideProgressBar={false}

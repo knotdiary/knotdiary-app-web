@@ -1,7 +1,7 @@
 import { reactLocalStorage } from 'reactjs-localstorage';
 import { toast } from "react-toastify";
 import { SET_USER, SET_SESSION } from './user';
-import knotDiaryApi from 'services/KnotDiaryApi';
+import gabbooApi from 'services/GabbooApi';
 
 export const LOGIN_ERROR = 'LOGIN_ERROR';
 export const LOGIN_BUSY = 'LOGIN_BUSY';
@@ -11,17 +11,17 @@ const login = (username, password) => {
     dispatch({ type: LOGIN_BUSY, payload: true });
 
     try {
-      const authToken = await knotDiaryApi.login(username, password);
+      const authToken = await gabbooApi.login(username, password);
       if (authToken && authToken.access_token) {
         reactLocalStorage.setObject('auth-token', authToken);
 
-        const user = await knotDiaryApi.getUser();
+        const user = await gabbooApi.getUser();
 
         if (!user || !user.data) {
           dispatch({ type: LOGIN_ERROR, payload: 'Failed to login. Please try again.' });
         }
 
-        const coupleData = await knotDiaryApi.getCoupleInfo(user.data.username);
+        const coupleData = await gabbooApi.getCoupleInfo(user.data.username);
         if (!coupleData || !coupleData.data) {
           dispatch({ type: LOGIN_ERROR, payload: 'Failed to login. Please try again.' });
         }

@@ -1,12 +1,12 @@
 @import './variables';
 
-#knotdiary-main {
+#gabboo-main {
   height: 100%;
 
-  #knotdiary-main--content {
+  #gabboo-main--content {
     height: 100%;
 
-    #knotdiary-main--content-body {
+    #gabboo-main--content-body {
       margin: 0 auto;
       height: 100%;
 
@@ -15,8 +15,8 @@
       }
     }
 
-    .knotdiary-toasts {
-      .knotdiary-toasts--item {
+    .gabboo-toasts {
+      .gabboo-toasts--item {
         &.Toastify__toast--default {
           background-color: $white;
         }

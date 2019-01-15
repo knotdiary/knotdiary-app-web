@@ -9,6 +9,7 @@ $yellow: #ffc107 !default;
 $green: #76c043 !default;
 $teal: #20c997 !default;
 $cyan: #17a2b8 !default;
+$primary-color: #d04d1c !default;
 
 // grayscale colors
 $white: #fff !default;
@@ -37,14 +38,14 @@ $screen-md: 960px;
 $screen-lg: 1280px;
 $screen-xl: 1920px;
 
-$primary: $blue;
+$primary: $primary-color;
 $success: $green;
 $danger: $red;
 $info: #007284;
 
 // app colors
-$primary-text-color: #495057;
-$primary-app-color: #a6daef;
+$primary-text-color: $gray-900;
+$primary-app-color: $primary-color;
 
 // app sizes 
 $app-header-height: 4rem;

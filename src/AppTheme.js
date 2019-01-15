@@ -7,25 +7,14 @@ const AppTheme = createMuiTheme({
   overrides: {
     MuiPickersToolbar: {
       toolbar: {
-        backgroundColor: '#a6daef',
+        backgroundColor: '#e9ecef',
       },
     },
     MuiPickersCalendarHeader: {
     },
-    MuiPickersDay: {
-      day: {
-        color: '#d0e2ec',
-      },
-      selected: {
-        backgroundColor: '#a6daef',
-      },
-      current: {
-        color: '#d0e2ec',
-      },
-    },
     MuiPickersModal: {
       dialogAction: {
-        color: '#d0e2ec',
+        color: '#ffa27f',
       },
     },
     MuiPaper: {
@@ -33,18 +22,28 @@ const AppTheme = createMuiTheme({
         backgroundColor: '#fff',
       },
     },
+    MuiIconButton: {
+      root: {
+        padding: 0,
+      },
+    },
+    MuiInputAdornment: {
+      root: {
+        padding: 0,
+      },
+    },
   },
   palette: {
     primary: {
-      main: '#a6daef',
+      main: '#d04d1c',
       contrastText: '#fff',
     },
     secondary: {
-      main: '#d0e2ec',
+      main: '#ffa27f',
       contrastText: '#fff',
     },
     type: 'light',
-    background: '#dee2e6',
+    background: '#d1ccca',
   },
 });
 

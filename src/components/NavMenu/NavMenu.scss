@@ -29,22 +29,6 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-
-        &.home {
-          background-image: url('../../assets/icons/icons8-home.png');
-        }
-
-        &.vendors {
-          background-image: url('../../assets/icons/icons8-team.png');
-        }
-
-        &.feed {
-          background-image: url('../../assets/icons/icons8-news-feed.png');
-        }
-
-        &.settings {
-          background-image: url('../../assets/icons/icons8-settings.png');
-        }
       }
 
       @include active-element {

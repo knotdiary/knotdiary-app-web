@@ -11,10 +11,8 @@ import {
   HomeView,
   LoginView,
   NotFoundView,
-  SplashView,
   ErrorView,
   SignupView,
-  PartnerInviteView,
   VendorDetailView,
   VendorListView,
 } from './views';
@@ -29,7 +27,6 @@ function AppRoutes(props) {
     <Switch>
       <Route exact path="/signup" component={SignupView} />
       <Route exact path="/login" component={LoginView} />
-      <Route exact path="/partner-invite" component={IsAuthorized(PartnerInviteView)} />
       <Route exact path="/" component={IsAuthorized(HomeView)} />
       <Route exact path="/:coupleId" component={IsAuthorized(HomeView)} />
       <Route exact path="/:coupleId/feed" component={IsAuthorized(FeedView)} />
