@@ -56,3 +56,4 @@ class AppHeader extends PureComponent {
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppHeader);
 export { AppHeader as PlainAppHeader };
+
